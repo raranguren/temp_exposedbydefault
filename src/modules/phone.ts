@@ -1,4 +1,5 @@
 import type { FingerprintData } from './types';
+import { resolveSensor } from './sensor';
 
 export function getPhoneFingerprint(): FingerprintData[] {
   const data: FingerprintData[] = [];
@@ -56,18 +57,21 @@ export function getPhoneFingerprint(): FingerprintData[] {
       category: 'Sensors',
       key: 'Accelerometer',
       value: 'Checking...',
+      resolve: resolveSensor('Accelerometer'),
       tooltip: 'Measures acceleration of the device along 3 axes. Placeholder—actual permission checked asynchronously.'
     },
     {
       category: 'Sensors',
       key: 'Gyroscope',
       value: 'Checking...',
+      resolve: resolveSensor('Gyroscope'),
       tooltip: 'Measures rotation rate around the device axes. Placeholder—actual permission checked asynchronously.'
     },
     {
       category: 'Sensors',
       key: 'Magnetometer',
       value: 'Checking...',
+      resolve: resolveSensor('Magnetometer'),
       tooltip: 'Detects the magnetic field around the device. Placeholder—actual permission checked asynchronously.'
     },
     {
