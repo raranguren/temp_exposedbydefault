@@ -56,23 +56,23 @@ export function getPhoneFingerprint(): FingerprintData[] {
     {
       category: 'Sensors',
       key: 'Accelerometer',
-      value: 'Checking...',
+      value: 'Waiting...',
       resolve: resolveSensor('Accelerometer'),
-      tooltip: 'Measures acceleration of the device along 3 axes. Placeholder—actual permission checked asynchronously.'
+      tooltip: 'Measures acceleration of the device along 3 axes. Detected by instantiating Accelerometer() and listening for a first reading.'
     },
     {
       category: 'Sensors',
       key: 'Gyroscope',
-      value: 'Checking...',
+      value: 'Waiting...',
       resolve: resolveSensor('Gyroscope'),
-      tooltip: 'Measures rotation rate around the device axes. Placeholder—actual permission checked asynchronously.'
+      tooltip: 'Measures rotation rate around the device axes. Detected by instantiating Gyroscope() and listening for a first reading.'
     },
     {
       category: 'Sensors',
       key: 'Magnetometer',
-      value: 'Checking...',
+      value: 'Waiting...',
       resolve: resolveSensor('Magnetometer'),
-      tooltip: 'Detects the magnetic field around the device. Placeholder—actual permission checked asynchronously.'
+      tooltip: 'Detects the magnetic field around the device. Detected by instantiating Magnetometer() and listening for a first reading.'
     },
     {
       category: 'Sensors',
