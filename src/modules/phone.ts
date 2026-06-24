@@ -1,5 +1,5 @@
 import type { FingerprintData } from './types';
-import { resolveSensor } from './sensor';
+import { streamSensor } from './sensor';
 
 export function getPhoneFingerprint(): FingerprintData[] {
   const data: FingerprintData[] = [];
@@ -57,22 +57,22 @@ export function getPhoneFingerprint(): FingerprintData[] {
       category: 'Sensors',
       key: 'Accelerometer',
       value: 'Waiting...',
-      resolve: resolveSensor('Accelerometer'),
-      tooltip: 'Measures acceleration of the device along 3 axes. Detected by instantiating Accelerometer() and listening for a first reading.'
+      live: streamSensor('Accelerometer'),
+      tooltip: 'Measures acceleration of the device along 3 axes. Obtained from an Accelerometer object.'
     },
     {
       category: 'Sensors',
       key: 'Gyroscope',
       value: 'Waiting...',
-      resolve: resolveSensor('Gyroscope'),
-      tooltip: 'Measures rotation rate around the device axes. Detected by instantiating Gyroscope() and listening for a first reading.'
+      live: streamSensor('Gyroscope'),
+      tooltip: 'Measures rotation rate around the device axes. Obtained from a Gyroscope object.'
     },
     {
       category: 'Sensors',
       key: 'Magnetometer',
       value: 'Waiting...',
-      resolve: resolveSensor('Magnetometer'),
-      tooltip: 'Detects the magnetic field around the device. Detected by instantiating Magnetometer() and listening for a first reading.'
+      live: streamSensor('Magnetometer'),
+      tooltip: 'Detects the magnetic field around the device. Obtained from a Magnetometer object.'
     },
     {
       category: 'Sensors',

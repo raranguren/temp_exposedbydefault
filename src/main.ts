@@ -141,6 +141,7 @@ async function renderApp() {
     item.resolve?.()
       .then(value => updateTile(item, value))
       .catch(() => updateTile(item, 'Unavailable'));
+    item.live?.(value => updateTile(item, value));
   }
 
   // Smooth scroll + active nav
